@@ -29,3 +29,33 @@
 #     err_gen = (st for st in file if 'line' in st)
 #     for item in err_gen:
 #         print(item)
+
+
+# Задача 2
+
+from functools import reduce
+
+
+def square_func(x, y):
+    return x * y
+
+
+def my_reduce(function, value):
+
+    value: iter = iter(value)
+    result = next(value)
+
+    for i in value:
+        result = function(result, i)
+    return result
+
+# Задача 3
+
+
+def test_my_reduce(function, value):
+    assert function(square_func, value) == reduce(square_func, value), 'False'
+    return True
+
+print(test_my_reduce(my_reduce, [12, 2, 3, 4]))
+
+#print(reduce(square_func, [12,2,3,4]))
