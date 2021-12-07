@@ -33,29 +33,49 @@
 
 # Задача 2
 
-from functools import reduce
-
-
-def square_func(x, y):
-    return x * y
-
-
-def my_reduce(function, value):
-
-    value: iter = iter(value)
-    result = next(value)
-
-    for i in value:
-        result = function(result, i)
-    return result
+# from functools import reduce
+#
+#
+# def square_func(x, y):
+#     return x * y
+#
+#
+# def my_reduce(function, value):
+#
+#     value: iter = iter(value)
+#     result = next(value)
+#
+#     for i in value:
+#         result = function(result, i)
+#     return result
 
 # Задача 3
 
 
-def test_my_reduce(function, value):
-    assert function(square_func, value) == reduce(square_func, value), 'False'
-    return True
+# def test_my_reduce(function, value):
+#     assert function(square_func, value) == reduce(square_func, value), 'False'
+#     return True
+#
+#
+# print(test_my_reduce(my_reduce, [12, 2, 3, 4]))
+# print(reduce(square_func, [12,2,3,4]))
 
-print(test_my_reduce(my_reduce, [12, 2, 3, 4]))
+# Задача 4
 
-#print(reduce(square_func, [12,2,3,4]))
+# class Visibility:
+#
+#     value1: str = 'qaz'
+#     value2: int = 2
+#
+#     def __init__(self):
+#         self.value3: str = 'wsx'
+#         self.value4: int = 4
+#
+#     def visibility_of_class(self):
+#         return 'vars: ' + str(vars(self)) + '\n' + '__dict__: ' + str(self.__dict__) + '\n' + 'dir: ' + str(dir(self))
+#
+#
+# cls1 = Visibility()
+# print(cls1.visibility_of_class())
+
+
