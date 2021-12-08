@@ -78,4 +78,3 @@
 # cls1 = Visibility()
 # print(cls1.visibility_of_class())
 
-
