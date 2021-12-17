@@ -2,9 +2,13 @@ import hw_14
 import unittest
 
 class CalcTest(unittest.TestCase):
+    """test_assertEqual_Kharkov and test_assertEqual_London проверяем данные перед тестом"""
 
-    def test_assertEqual(self):
+    def test_assertEqual_Kharkov(self):
         self.assertEqual(hw_14.get_temp('Kharkov'), 'Celsius:1 Pressure:1010')
+
+    def test_assertEqual_London(self):
+        self.assertEqual(hw_14.get_temp('London'), 'Celsius:8 Pressure:1040')
 
     def test_error_404(self):
         self.assertNotEqual(hw_14.get_temp('Kharkov'), '404')

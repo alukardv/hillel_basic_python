@@ -31,4 +31,4 @@ def get_temp(city: str='Kharkov'):
 
     return result
 
-
+#print(get_temp('London'))
