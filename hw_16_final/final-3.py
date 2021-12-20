@@ -9,8 +9,8 @@ input_data_user = str(input()).upper()
 def check_input():
     """check user input date"""
     data: list = input_data_user.split()  # splitting user input
-    if len(data) > 1:
-        data[1] = data[1].replace('-', '')
+    if len(data) > 1:  # check how much data enter
+        data[1] = data[1].replace('-', '')  # formatting the date for api
     else:
         data.append('')
     return data
