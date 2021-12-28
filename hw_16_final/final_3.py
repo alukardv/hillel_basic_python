@@ -3,7 +3,7 @@ import requests
 # for test usd 2020-12-25
 
 
-def check_input(check_input_data):
+def check_input(check_input_data: str):
     """check user input data"""
     data: list = check_input_data.split()  # splitting user input
     if len(data) > 1:  # check how much data enter
@@ -26,12 +26,11 @@ def get_rate(currency: str):
 
 
 if __name__ == '__main__':
-    # user input date
-    input_data_user = str(input()).upper()
-    date_for_api = check_input(input_data_user)
+    input_data_user: str = str(input()).upper()  # user input date
+    date_for_api: list = check_input(input_data_user)
     # url_api get rate for date
-    url_api = f'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date={date_for_api[1]}&json'
-    data_response_api = requests.get(url_api).json()
+    url_api: str = f'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date={date_for_api[1]}&json'
+    data_response_api: list = requests.get(url_api).json()
 
     try:
         if data_response_api == [] or data_response_api[0].get('message') == 'Wrong parameters format':
