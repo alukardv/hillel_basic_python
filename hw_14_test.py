@@ -20,6 +20,5 @@ class CalcTest(unittest.TestCase):
         self.assertNotEqual(hw_14.get_temp('Kharkov'), 'City not found.')
 
 
-
 if __name__ == '__main__':
     unittest.main()
